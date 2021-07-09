@@ -8,8 +8,11 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WelcomeViewController" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WelcomeViewController" customModule="iChat" customModuleProvider="target">
             <connections>
+                <outlet property="googleButton" destination="4Dh-W8-YLG" id="d5J-xG-syQ"/>
+                <outlet property="signInButton" destination="YRi-mg-97n" id="GTr-9x-ERF"/>
+                <outlet property="signUpButton" destination="1Cf-xU-ZWz" id="HY1-lR-g8l"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -17,14 +20,111 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IChat_main_logo" translatesAutoresizingMaskIntoConstraints="NO" id="vok-TS-phg">
+                    <rect key="frame" x="114.5" y="48" width="91" height="91"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="vok-TS-phg" secondAttribute="height" multiplier="1:1" id="94S-Ob-FPy"/>
+                    </constraints>
+                </imageView>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="BVu-cM-DSk">
+                    <rect key="frame" x="32" y="203" width="256" height="302.5"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="QOQ-Ho-YNy">
+                            <rect key="frame" x="0.0" y="0.0" width="256" height="79.5"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Get started with:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K3c-eJ-We3">
+                                    <rect key="frame" x="0.0" y="0.0" width="127" height="20.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Dh-W8-YLG">
+                                    <rect key="frame" x="0.0" y="28.5" width="256" height="51"/>
+                                    <color key="backgroundColor" red="0.69411764710000001" green="0.0078431372550000003" blue="0.15686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                    <state key="normal" title="Google">
+                                        <color key="titleColor" systemColor="systemBackgroundColor"/>
+                                    </state>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="4Dh-W8-YLG" firstAttribute="width" secondItem="QOQ-Ho-YNy" secondAttribute="width" id="7li-ts-9SQ"/>
+                            </constraints>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Ota-Ny-rRE">
+                            <rect key="frame" x="0.0" y="111.5" width="256" height="79.5"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Or sign up with:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JMY-jl-wVi">
+                                    <rect key="frame" x="0.0" y="0.0" width="119.5" height="20.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Cf-xU-ZWz">
+                                    <rect key="frame" x="0.0" y="28.5" width="256" height="51"/>
+                                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                    <state key="normal" title="Email">
+                                        <color key="titleColor" systemColor="systemBackgroundColor"/>
+                                    </state>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="1Cf-xU-ZWz" firstAttribute="width" secondItem="Ota-Ny-rRE" secondAttribute="width" id="n5M-Q4-seR"/>
+                            </constraints>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="aO0-Kn-aZH">
+                            <rect key="frame" x="0.0" y="223" width="256" height="79.5"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Already onboard?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Gy-vw-wL9">
+                                    <rect key="frame" x="0.0" y="0.0" width="134" height="20.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YRi-mg-97n">
+                                    <rect key="frame" x="0.0" y="28.5" width="256" height="51"/>
+                                    <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                    <state key="normal" title="Login">
+                                        <color key="titleColor" systemColor="secondarySystemBackgroundColor"/>
+                                    </state>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="YRi-mg-97n" firstAttribute="width" secondItem="aO0-Kn-aZH" secondAttribute="width" id="qjN-m2-UJk"/>
+                            </constraints>
+                        </stackView>
+                    </subviews>
+                </stackView>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="BVu-cM-DSk" secondAttribute="trailing" constant="32" id="4cF-tp-Jlw"/>
+                <constraint firstItem="YRi-mg-97n" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.09" id="9TF-0e-csJ"/>
+                <constraint firstItem="vok-TS-phg" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="48" id="FVE-ni-tkz"/>
+                <constraint firstItem="vok-TS-phg" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.16" id="Gn0-sS-wV9"/>
+                <constraint firstItem="4Dh-W8-YLG" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.09" id="SNW-eZ-9H8"/>
+                <constraint firstItem="vok-TS-phg" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="Th6-2l-v2F"/>
+                <constraint firstItem="1Cf-xU-ZWz" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.09" id="X1P-ki-oBo"/>
+                <constraint firstItem="BVu-cM-DSk" firstAttribute="top" secondItem="vok-TS-phg" secondAttribute="bottom" constant="64" id="XtU-0F-0th"/>
+                <constraint firstItem="BVu-cM-DSk" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="32" id="YFS-NW-Oaj"/>
+            </constraints>
             <point key="canvasLocation" x="-817" y="80"/>
         </view>
     </objects>
     <resources>
+        <image name="IChat_main_logo" width="310" height="361"/>
+        <systemColor name="secondarySystemBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -143,9 +143,9 @@
 		259785122698E102003A5C4E /* Welcome */ = {
 			isa = PBXGroup;
 			children = (
-				259785132698E102003A5C4E /* Controller */,
 				259785152698E102003A5C4E /* Model */,
 				259785182698E102003A5C4E /* View */,
+				259785132698E102003A5C4E /* Controller */,
 			);
 			path = Welcome;
 			sourceTree = "<group>";

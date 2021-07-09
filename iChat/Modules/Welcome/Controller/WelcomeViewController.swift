@@ -10,6 +10,9 @@ import UIKit
 class WelcomeViewController: UIViewController {
     
     // MARK: - IBOutlets
+    @IBOutlet var googleButton: UIButton!
+    @IBOutlet var signUpButton: UIButton!
+    @IBOutlet var signInButton: UIButton!
     
     
     // MARK: - Properties
@@ -30,6 +33,10 @@ class WelcomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         model.viewController = self
+        
+        googleButton.layer.cornerRadius = 8
+        signUpButton.layer.cornerRadius = 8
+        signInButton.layer.cornerRadius = 8
     }
     
     // MARK: - IBActions
